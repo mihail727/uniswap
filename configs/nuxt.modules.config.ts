@@ -1,7 +1,7 @@
 import type { NuxtConfig } from 'nuxt';
 
 export default {
-	modules: ['@nuxtjs/tailwindcss'],
+	modules: ['@nuxtjs/tailwindcss', '@vueuse/nuxt'],
 	tailwindcss: {
 		configPath: '~~/tailwind.config.js',
 		viewer: false,
