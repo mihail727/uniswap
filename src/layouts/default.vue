@@ -1,18 +1,9 @@
 <script setup lang="ts">
-	import {
-		HomeIcon,
-		DotsHorizontalIcon,
-		XIcon,
-		ChevronDownIcon,
-	} from '@heroicons/vue/outline/index.js';
+	import { HomeIcon, DotsHorizontalIcon, XIcon } from '@heroicons/vue/outline/index.js';
 
 	const isAdditionalMenuOpened = ref(false);
-	const isCurrencyMenuOpened = ref(false);
-
-	const CurrencyMenuEl = ref<HTMLButtonElement>(null);
 	const AdditionalMenuEl = ref<HTMLButtonElement>(null);
 
-	onClickOutside(CurrencyMenuEl, () => (isCurrencyMenuOpened.value = false));
 	onClickOutside(AdditionalMenuEl, () => (isAdditionalMenuOpened.value = false));
 </script>
 
@@ -57,18 +48,8 @@
 					</NuxtLink>
 				</div>
 			</div>
-			<div class="flex space-x-2">
-				<button
-					ref="CurrencyMenuEl"
-					@click="isCurrencyMenuOpened = !isCurrencyMenuOpened"
-					class="flex items-center flex-nowrap space-x-1 rounded-full shadow-md bg-white p-[6px_10px] text-gray-600 border-gray-300 hover:text-black transition-all"
-				>
-					<span>Ethereum</span>
-					<ChevronDownIcon
-						class="w-5 mt-1 transition-all"
-						:class="{ 'rotate-180': isCurrencyMenuOpened }"
-					/>
-				</button>
+			<div class="flex items-center space-x-2">
+				<VCurrencyDropDown />
 				<button
 					class="rounded-full shadow-md border border-white bg-green-300 p-[6px_10px] text-gray-600 hover:text-black transition-all"
 				>
@@ -79,8 +60,8 @@
 					@click="isAdditionalMenuOpened = !isAdditionalMenuOpened"
 					class="relative rounded-full shadow-md p-[6px_10px] border bg-white text-gray-600 border-gray-300 hover:text-black active:scale-75 transition-all"
 				>
-					<DotsHorizontalIcon v-if="!isAdditionalMenuOpened" class="w-6" />
-					<XIcon v-if="isAdditionalMenuOpened" class="w-6" />
+					<DotsHorizontalIcon v-if="!isAdditionalMenuOpened" class="h-7" />
+					<XIcon v-if="isAdditionalMenuOpened" class="h-7" />
 				</button>
 			</div>
 		</nav>
