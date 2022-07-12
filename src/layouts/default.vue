@@ -18,7 +18,7 @@
 					class="w-9 stroke-[1.5] bg-white/40 rounded-full p-1 hover:bg-white/70 transition-all"
 				/>
 			</NuxtLink>
-			<div class="flex ml-[16%] justify-center items-center shadow-md rounded-full">
+			<div class="flex ml-[18%] justify-center items-center shadow-md rounded-full">
 				<div
 					class="flex bg-white justify-center items-center space-x-1 rounded-full p-[4px]"
 				>
@@ -34,27 +34,11 @@
 					>
 						Пулы
 					</NuxtLink>
-					<NuxtLink
-						to="vote"
-						class="rounded-full p-[6px_10px] text-gray-600 hover:text-black transition-all"
-					>
-						Голосования
-					</NuxtLink>
-					<NuxtLink
-						to="graphics"
-						class="rounded-full p-[6px_10px] text-gray-600 hover:text-black transition-all"
-					>
-						Графики
-					</NuxtLink>
 				</div>
 			</div>
 			<div class="flex items-center space-x-2">
 				<VCurrencyDropDown />
-				<button
-					class="rounded-full shadow-md border border-white bg-green-300 p-[6px_10px] text-gray-600 hover:text-black transition-all"
-				>
-					Подключить кошелёк
-				</button>
+				<VAddWallet />
 				<button
 					ref="AdditionalMenuEl"
 					@click="isAdditionalMenuOpened = !isAdditionalMenuOpened"
@@ -65,6 +49,7 @@
 				</button>
 			</div>
 		</nav>
+
 		<slot />
 	</div>
 </template>
